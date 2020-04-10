@@ -4,6 +4,8 @@ require("dotenv").config();
 //Here are my variables for the two packages that are required for my app to run.
 var keys = require("./keys.js");
 var axios = require("axios");
+var moment = require("moment");
+var fs = require("fs");
 
 //Here is my spotiy key and secret key,
 //which are stored in a different js file so they are securely stored.
@@ -70,6 +72,45 @@ function getMovies() {
     })
 }
 
+function getBands() {
+    var bandSearch = process.argv.slice(3).join(" ");
+    var queryURL = "https://rest.bandsintown.com/artists/" + bandSearch + "/events?app_id=codingbootcamp";
+
+    axios
+    .get(queryURL)
+    .then(function(response) {
+        //console.log(response);
+        var searchRes = response.data;
+
+        if (searchRes == 0) {
+            console.log("Sorry. No events.");
+        } else {
+            for (var i = 0; i < searchRes.length; i++) {
+            console.log("Name of Venue: " + searchRes[i].venue.name + "\nVenue Location: " + searchRes[i].venue.location + "\nDate: " + moment(searchRes[i].datetime).format("MMMM Do, YYYY hh:mm A"));
+            console.log("------------------------------------------");
+            }
+        }
+    })
+    .catch(function(error) {
+        if (error.response) {
+            console.log(error.response.data);
+            console.log("------------------------------------------");
+        }
+    })
+}
+
+//Here we have a function that reads a txt file to receive instructions.
+function randomTextRead() {
+    fs.readFile("random.txt", "utf8", function(error, data) {
+        if (error) {
+            return console.log(error);
+        }
+        console.log(data);
+        
+
+    })
+}
+
 //Here is the switch case that runs the getsongs() function when the user types in the commands.
 switch (command) {
     case "spotify-this-song":
@@ -78,6 +119,14 @@ switch (command) {
     
     case "movie-this":
         getMovies();
+        break;
+    
+    case "concert-this":
+        getBands();
+        break;
+
+    case "do-what-it-says":
+        randomTextRead();
         break;
 }
 
