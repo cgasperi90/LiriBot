@@ -20,8 +20,8 @@ function getSongs() {
 
     var song = process.argv.slice(3).join(" ");
 
-    if (song === "") {
-        song = "thesign";
+    if (song == 0) {
+        song == "the sign";
     } else {
 
     spotify.search({ type: 'track', query: song }, function(err, data) {
