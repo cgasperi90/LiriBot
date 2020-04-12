@@ -14,15 +14,14 @@ var spotify = new Spotify(keys.spotify);
 
 //Here are my variables for my commands for liri and to join the 3rd index together.
 var command = process.argv[2];
+var song = process.argv.slice(3).join(" ");
+
+var getArtistsNames = function(artist) {
+    return artist.name;
+}
 
 //This is my function that gets the songs from spotify when the user searches.
 function getSongs() {
-
-    var song = process.argv.slice(3).join(" ");
-
-    if (song == 0) {
-        song == "the sign";
-    } else {
 
     spotify.search({ type: 'track', query: song }, function(err, data) {
         if (err) {
@@ -34,7 +33,8 @@ function getSongs() {
         //The loop then pulls out the song name, album name, the artist's name, and the spotify link.
         for (var i = 0; i < songArr.length; i++) {
             
-            console.log("Artist: " + songArr[i].artists[0].name + 
+            console.log(i);
+            console.log("Artist: " + songArr[i].artists.map(getArtistsNames) + 
             "\nSong: " + songArr[i].name + 
             "\nAlbum: " + songArr[i].album.name + 
             "\nLink: " + songArr[i].external_urls.spotify);
@@ -42,7 +42,7 @@ function getSongs() {
         }
   });
 }
-}
+
 //Function so thaat LIRI will get the movies when the user types in command.
 function getMovies() {
     var movieSearch = process.argv.slice(3).join(" ");
@@ -106,6 +106,12 @@ function randomTextRead() {
             return console.log(error);
         }
         console.log(data);
+        var dataArr = data.split(",");
+        console.log(dataArr);
+        command = dataArr[0];
+        song = dataArr[1];
+        getSongs();
+        console.log("------------------------------------------");
         
 
     })
@@ -128,5 +134,9 @@ switch (command) {
     case "do-what-it-says":
         randomTextRead();
         break;
+
+    default:
+        console.log("LIRI does not know that one.");
+        console.log("------------------------------------------");
 }
 
