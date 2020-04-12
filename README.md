@@ -47,7 +47,7 @@ LIRI is set up in multiple Javascript files. One file holds the keys to the API'
     *   Ex of a search for a movie
         *   "node liri.js movie-this frozen"
 *   ![screenshot terminal movie example](Screenshots/terminalMovieExample.png)
-These are the results that populate from the search.
+*   These are the results that populate from the search.
 *   ![screenshot clone terminal](Screenshots/terminalMovieSearch.png)
 
 6. If all the commands were typed in correctly, then the information that was requested should populate. If there is a misspelling in the command, LIRI will alert that the command is not known.
