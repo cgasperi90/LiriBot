@@ -35,19 +35,20 @@ LIRI is set up in multiple Javascript files. One file holds the keys to the API'
 ## Instructions
 1. Clone the GitHub repo onto your machine. Here is the to the [GitHub] (https://github.com/cgasperi90/LiriBot.git) repository page.
 *   ![screenshot github repo clone](Screenshots/githubClone.png)
+2. Once the repository has been copied, then go to your terminal to clone the repository.
 *   ![screenshot github repo clone terminal](Screenshots/githubCloneTerminal.png)
 
-2. Go to your terminal on your machine, navigate to the root folder of LIRI.
+3. Go to your terminal on your machine, navigate to the root folder of LIRI.
 
-3. Run "npm install" so that the *package.json* file gets installed and the app will work properly on your machine.
+4. Run "npm install" so that the *package.json* file gets installed and the app will work properly on your machine.
 *   ![screenshot terminal NPM install](Screenshots/terminalNpmInstall.png)
 
-4. Once installed, you will type "node", followed by the name of the main file "liri.js", then the command desired "movie-this", and lastly, what the user wants to search for.
+5. Once installed, you will type "node", followed by the name of the main file "liri.js", then the command desired "movie-this", and lastly, what the user wants to search for.
     *   Ex of a search for a movie
         *   "node liri.js movie-this frozen"
 *   ![screenshot terminal movie example](Screenshots/terminalMovieExample.png)
 *   ![screenshot clone terminal](Screenshots/terminalMovieSearch.png)
 
-5. If all the commands were typed in correctly, then the information that was requested should populate. If there is an misspelling in the command, LIRI will alert that the command is not known.
+6. If all the commands were typed in correctly, then the information that was requested should populate. If there is an misspelling in the command, LIRI will alert that the command is not known.
 *   ![screenshot terminal movie Error](Screenshots/terminalMovieError.png)
 
