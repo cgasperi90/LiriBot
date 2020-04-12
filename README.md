@@ -35,7 +35,7 @@ LIRI is set up in multiple Javascript files. One file holds the keys to the API'
 ## Instructions
 1. Clone the GitHub repo onto your machine. Here is the to the [GitHub] (https://github.com/cgasperi90/LiriBot.git) repository page.
 *   ![screenshot github repo clone](Screenshots/githubClone.png)
-*   ![screenshot github repo clone terminal](Screenshots/githubCloneTerminal)
+*   ![screenshot github repo clone terminal](Screenshots/githubCloneTerminal.png)
 
 2. Go to your terminal on your machine, navigate to the root folder of LIRI.
 
