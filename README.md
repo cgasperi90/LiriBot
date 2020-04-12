@@ -34,7 +34,7 @@ LIRI is set up in multiple Javascript files. One file holds the keys to the API'
 
 ## Instructions
 1. Clone the GitHub repo onto your machine. Here is the to the [GitHub] (https://github.com/cgasperi90/LiriBot.git) repository page.
-![screenshot github repo clone](LiriBot/Screenshots/githubCloneTerminal.png) 
+![screenshot github repo clone](Screenshots/githubClone.png) 
 2. Go to your terminal on your machine, navigate to the root folder of LIRI.
 3. Run "npm install" so that the *package.json* file gets installed and the app will work properly on your machine.
 4. Once installed, you will type "node", followed by the name of the main file "liri.js", then the command desired "movie-this", and lastly, what the user wants to search for.
